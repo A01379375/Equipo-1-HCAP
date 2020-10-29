@@ -35,7 +35,8 @@ def convolucion(A, B):
             C[i][j] = suma
     return C
 
-filtro = [[3, 4, 2], [1, 0, 1], [2, 3, 1]]
+#filtro = [[3, 4, 2], [1, 0, 1], [2, 3, 1]]
+filtro = [[255, 200, 150], [120, 235, 255], [123, 234, 235]]
 res_sinpadd = convolucion(imagenrgb2gray, filtro)
 cv2.imwrite('imagen_convolucion_sin_padding.jpg', res_sinpadd)
 res_sinpadd2 = convolucion(imagen2rgb2gray, filtro)
