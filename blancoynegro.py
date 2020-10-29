@@ -23,8 +23,8 @@ imagen2rgb2gray = rgb2gray(imagen_2)
 cv2.imwrite('Imagen_paisaje_escala_de_grises.jpg', imagen2rgb2gray)
 
 def blancoynegro(imagen):
-    valorF = len(imagen)
-    valorC = len(imagen[0])
+    valorF = imagen.shape[0]
+    valorC = imagen.shape[1]
     bw = np.zeros((valorF, valorC))
     valorIntermedio = 128
     for x in range (len(bw)):
