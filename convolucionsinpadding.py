@@ -14,3 +14,9 @@ def convolucion(A, B):
                     suma += A[n + i][m + j] * B[n][m]
             C[i][j] = suma
     return C
+
+img = cv2.imread('imagen.jpg')
+img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+filtro = [[3, 4, 2], [1, 0, 1], [2, 3, 1]]
+res = convolucion(img, filtro)
+cv2.imwrite('imagenconvolucionsinpadding.jpg', res)
