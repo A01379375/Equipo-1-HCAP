@@ -14,3 +14,8 @@ def rgb2gray(A):
 imagen_i = cv2.imread("imagen.jpg")
 imagenrgb2gray = rgb2gray(imagen_i)
 cv2.imwrite("Imagen_escala_de_grises.jpg",imagenrgb2gray)
+
+imagen_2 = cv2.imread('paisaje.jpg')
+imagen_2 = cv2.resize(imagen_2, (512, 256))
+imagen2rgb2gray = rgb2gray(imagen_2)
+cv2.imwrite('Imagen_paisaje_escala_de_grises.jpg', imagen2rgb2gray)
