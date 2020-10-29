@@ -1,4 +1,7 @@
 #
+import cv2
+import numpy as np
+
 def blancoynegro(imagen):
     valorF = len(imagen)
     valorC = len(imagen[0])
