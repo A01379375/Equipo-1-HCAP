@@ -24,13 +24,13 @@ def blancoynegro(imagen):
     valorF = imagen.shape[0]
     valorC = imagen.shape[1]
     bw = np.zeros((valorF, valorC))
-    valorIntermedio = 50
+    valorIntermedio = 127
     for x in range (len(bw)):
         for y in range (valorC):
             if imagen[x][y] <= valorIntermedio:
-                bw[x][y]  = 0
+                bw[x][y] = 0
             else:
-                bw[x][y] = 1
+                bw[x][y] = 255
     return bw
 
 byn = blancoynegro(imagenrgb2gray)
