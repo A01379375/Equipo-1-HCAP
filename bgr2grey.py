@@ -14,4 +14,4 @@ def rgb2gray(A):
 imagen_i = cv2.imread("imagen.jpg")
 print(imagen_i.shape)
 imagenrgb2gray = rgb2gray(imagen_i)
-cv2.imwrite("Imagen_blanco_y_negro.jpg",imagenrgb2gray)
+cv2.imwrite("Imagen_escala_de_grises.jpg",imagenrgb2gray)
