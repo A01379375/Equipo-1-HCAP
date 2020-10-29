@@ -38,9 +38,16 @@ def convolucion(A, B):
                 C[i][j] = suma
     return C
 
+def convolucion_padding(A, B):
+    C = np.zeros((len(A) + 2, len(A[0]) + 2))
+    for i in range(A.shape[0]):
+        for j in range(A.shape[1]):
+            C[i + 1][j + 1] = A[i][j]
+    return convolucion(C, B)
+
 #filtro = [[3, 4, 2], [1, 0, 1], [2, 3, 1]]
-filtro = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
-res_sinpadd = convolucion(imagenrgb2gray, filtro)
-cv2.imwrite('imagen_convolucion_sin_padding.jpg', res_sinpadd)
-res_sinpadd2 = convolucion(imagen2rgb2gray, filtro)
-cv2.imwrite('imagen_paisaje_convolucion_sin_padding.jpg', res_sinpadd2)
+filtro = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
+res = convolucion_padding(imagenrgb2gray, filtro)
+cv2.imwrite('imagen_convolucion_con_padding.jpg', res)
+res = convolucion_padding(imagen2rgb2gray, filtro)
+cv2.imwrite('imagen_paisaje_convolucion_con_padding.jpg', res)
