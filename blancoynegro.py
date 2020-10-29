@@ -31,7 +31,7 @@ def blancoynegro(imagen):
                 bw[x][y]  = 0
             else:
                 bw[x][y] = 1
-        return bw
+    return bw
 
 byn = blancoynegro(imagenrgb2gray)
 cv2.imwrite("blanco_negro.jpg", byn)
