@@ -24,7 +24,7 @@ def blancoynegro(imagen):
     valorF = imagen.shape[0]
     valorC = imagen.shape[1]
     bw = np.zeros((valorF, valorC))
-    valorIntermedio = 127
+    valorIntermedio = 200
     for x in range (len(bw)):
         for y in range (valorC):
             if imagen[x][y] <= valorIntermedio:
