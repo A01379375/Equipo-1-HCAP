@@ -1,7 +1,6 @@
 import numpy as np
 import cv2
 
-#A escala de grises
 def rgb2gray(A):
     filas = len(A)
     columnas = len(A[0])
@@ -15,6 +14,12 @@ def rgb2gray(A):
 imagen_i = cv2.imread("imagen.jpg")
 imagenrgb2gray = rgb2gray(imagen_i)
 cv2.imwrite("Imagen_escala_de_grises.jpg",imagenrgb2gray)
+
+imagen_2 = cv2.imread('paisaje.jpg')
+imagen_2 = cv2.resize(imagen_2, (512, 256))
+imagen2rgb2gray = rgb2gray(imagen_2)
+cv2.imwrite('Imagen_paisaje_escala_de_grises.jpg', imagen2rgb2gray)
+
 
 #Funcion que calcula la matriz resultante C despues de aplicar la operacion convolucion de A*B
 def convolucion(A, B):
@@ -33,3 +38,5 @@ def convolucion(A, B):
 filtro = [[3, 4, 2], [1, 0, 1], [2, 3, 1]]
 res_sinpadd = convolucion(imagenrgb2gray, filtro)
 cv2.imwrite('imagen_convolucion_sin_padding.jpg', res_sinpadd)
+res_sinpadd2 = convolucion(imagen2rgb2gray, filtro)
+cv2.imwrite('imagen_paisaje_convolucion_sin_padding.jpg', res_sinpadd2)
